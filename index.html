@@ -1,0 +1,270 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!doctype html>\
+<html lang="en">\
+<head>\
+  <meta charset="utf-8" />\
+  <meta name="viewport" content="width=device-width,initial-scale=1" />\
+  <title>Nicol\'e1s Berkopec \'97 Mathematics PhD</title>\
+  <meta name="description" content="Homepage of Nicol\'e1s Berkopec \'97 PhD student in Mathematics at Washington University in St. Louis." />\
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">\
+\
+  <!-- MathJax -->\
+  <script>\
+    window.MathJax = \{\
+      tex: \{inlineMath: [['\\\\(','\\\\)'], ['$', '$']], displayMath: [['\\\\[','\\\\]'], ['$$','$$']]\},\
+      options: \{skipHtmlTags: ['script','noscript','style','textarea','pre']\}\
+    \};\
+  </script>\
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>\
+\
+  <style>\
+    :root \{\
+      --bg: #1f2937;          /* slate gray */\
+      --text: #f8f8f8;        /* soft white */\
+      --muted: #cbd5e1;       /* muted gray-blue */\
+      --accent: #800020;      /* burgundy */\
+      --card: #2a3444;        /* lighter slate for cards */\
+      --radius: 12px;\
+      --maxwidth: 960px;\
+    \}\
+\
+    * \{ box-sizing: border-box; margin: 0; padding: 0; \}\
+    html \{ scroll-behavior: smooth; \}\
+\
+    body \{\
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;\
+      color: var(--text);\
+      background: var(--bg);\
+      line-height: 1.65;\
+      display: flex;\
+      justify-content: center;\
+      padding: 0 20px;\
+    \}\
+\
+    .site \{ width: 100%; max-width: var(--maxwidth); \}\
+\
+    /* HEADER */\
+    header \{\
+      background: var(--bg);\
+      position: sticky;\
+      top: 0;\
+      z-index: 1000;\
+      display: flex;\
+      align-items: center;\
+      justify-content: space-between;\
+      flex-wrap: wrap;\
+      padding: 1rem 0;\
+      border-bottom: 1px solid rgba(255,255,255,0.1);\
+    \}\
+\
+    .brand \{ display: flex; align-items: center; gap: 16px; \}\
+\
+    .avatar \{\
+      width: 56px; height: 56px;\
+      border-radius: var(--radius);\
+      background: linear-gradient(135deg, var(--accent), #a52a2a);\
+      display: flex; align-items: center; justify-content: center;\
+      color: white; font-weight: 700; font-size: 20px;\
+      box-shadow: 0 4px 10px rgba(128,0,32,0.4);\
+    \}\
+\
+    h1 \{ font-size: 1.7rem; margin-bottom: .2rem; color: var(--text); \}\
+    p.lead \{ color: var(--muted); font-weight: 400; font-size: 0.95rem; \}\
+\
+    nav \{\
+      margin-top: 0.5rem;\
+    \}\
+    nav a \{\
+      text-decoration: none;\
+      color: var(--muted);\
+      margin-left: 1.2rem;\
+      font-weight: 600;\
+      font-size: 0.95rem;\
+      transition: color 0.2s ease;\
+    \}\
+    nav a:hover \{ color: var(--accent); \}\
+\
+    /* SECTIONS */\
+    main \{\
+      margin-top: 1.5rem;\
+      padding-bottom: 2rem;\
+    \}\
+\
+    section \{\
+      background: var(--card);\
+      padding: 20px 24px;\
+      border-radius: var(--radius);\
+      box-shadow: 0 3px 8px rgba(0,0,0,0.25);\
+      margin-bottom: 24px;\
+      transition: transform 0.2s ease, box-shadow 0.2s ease;\
+    \}\
+    section:hover \{\
+      transform: translateY(-2px);\
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);\
+    \}\
+\
+    h2 \{\
+      font-size: 1.25rem;\
+      margin-bottom: 0.6rem;\
+      color: var(--accent);\
+      border-bottom: 2px solid rgba(128,0,32,0.3);\
+      padding-bottom: 0.3rem;\
+      font-weight: 600;\
+    \}\
+\
+    ul, ol \{ padding-left: 1.2rem; margin: 0.5rem 0 0; \}\
+    li + li \{ margin-top: 0.4rem; \}\
+    .meta \{ color: var(--muted); font-size: 0.9rem; \}\
+    .pub-list li \{ padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); \}\
+\
+    /* CONTACT */\
+    .contact p \{ margin: 0.4rem 0; \}\
+    .btn \{\
+      display: inline-block;\
+      padding: 0.6rem 0.9rem;\
+      border-radius: 8px;\
+      background: var(--accent);\
+      color: white;\
+      text-decoration: none;\
+      font-weight: 600;\
+      transition: background 0.2s ease;\
+    \}\
+    .btn:hover \{ background: #a12c34; \}\
+\
+    footer \{\
+      margin-top: 2rem;\
+      text-align: center;\
+      color: var(--muted);\
+      font-size: 0.9rem;\
+      padding-bottom: 1rem;\
+    \}\
+\
+    @media (max-width: 700px) \{\
+      nav \{ width: 100%; text-align: center; margin-top: 0.5rem; \}\
+      nav a \{ margin: 0 0.6rem; \}\
+      .brand \{ justify-content: center; width: 100%; \}\
+    \}\
+  </style>\
+</head>\
+\
+<body>\
+  <div class="site">\
+    <header>\
+      <div class="brand">\
+        <div class="avatar">NB</div>\
+        <div>\
+          <h1>Nicol\'e1s Berkopec</h1>\
+          <p class="lead">PhD Student in Mathematics \'b7 Washington University in St. Louis</p>\
+        </div>\
+      </div>\
+      <nav>\
+        <a href="#about">About</a>\
+        <a href="#education">Education</a>\
+        <a href="#research">Talks</a>\
+        <a href="#teaching">Teaching</a>\
+        <a href="#grading">Grading</a>\
+        <a href="#publications">Publications</a>\
+        <a href="#service">Service</a>\
+        <a href="#contact">Contact</a>\
+      </nav>\
+    </header>\
+\
+    <main>\
+      <section id="about">\
+        <h2>About</h2>\
+        <p>I am a PhD student in Mathematics at Washington University in St. Louis. My research interests have an operator theoretic and complex analytic bent with recent attention to connections between analytic and algebraic curves.</p>\
+      </section>\
+\
+      <section id="education">\
+        <h2>Education</h2>\
+        <ul>\
+          <li><strong>PhD in Mathematics</strong> \'97 Washington University in St. Louis, Fall 2023 \'96 present</li>\
+          <li><strong>Master\'92s in Mathematics</strong> \'97 Washington University in St. Louis, Spring 2025</li>\
+          <li><strong>B.S. in Mathematics</strong> (Philosophy minor) \'97 University of New Mexico, Spring 2023</li>\
+        </ul>\
+      </section>\
+\
+      <section id="research">\
+        <h2>Presentations & Seminar Talks</h2>\
+        <ul>\
+          <li>WUSTL Analysis Seminar \'96 <em>Hyperbolic Analytic and Algebraic Curves</em>, Sept 2025</li>\
+          <li>WUSTL Szeg\'f6 Seminar \'96 <em>Dirichlet\'92s Theorem: A Gem from Number Theory</em>, Apr 2024</li>\
+          <li>UNM Algebra\'96Geometry Seminar \'96 <em>p-Derivations, Jet Operators, Ring Schemes</em>, May 2022</li>\
+          <li>Young Mathematicians Conference \'96 <em>Elliptic Dedekind Sums</em>, Aug 2021</li>\
+          <li>UNM Algebra\'96Geometry Seminar \'96 <em>Elliptic Dedekind Sums</em>, Aug 2021</li>\
+          <li>MAA MathFest \'96 <em>Elliptic Dedekind Sums</em>, Aug 2021</li>\
+          <li>SUMMR Conference \'96 <em>Elliptic Dedekind Sums</em>, Jul 2021</li>\
+        </ul>\
+      </section>\
+\
+      <section id="teaching">\
+        <h2>Teaching</h2>\
+        <ul>\
+          <li><strong>DRP Instructor</strong> \'96 Elementary Mathematics \'b7 Fall 2021</li>\
+          <li><strong>High-School DRP Instructor</strong> \'96 Group Theory (using own notes) \'b7 Spring 2022</li>\
+          <li><strong>DRP Instructor</strong> \'96 Na\'efve Lie Theory (Stillwell, entire book) \'b7 Spring 2022</li>\
+          <li><strong>DRP Instructor</strong> \'96 Real Analysis (Stein & Shakarchi Ch. 1\'962) and Intro to Integration (Bartle Ch. 1\'966) \'b7 Summer 2022</li>\
+          <li><strong>Solution Writer</strong> \'96 Math 312 (Differential Equations & Dynamical Systems) \'b7 Spring 2025</li>\
+        </ul>\
+      </section>\
+\
+      <section id="grading">\
+        <h2>Grading & Tutoring</h2>\
+        <ul>\
+          <li><strong>Tutor</strong> \'96 Linear Algebra, Calculus I\'96III, High-School Algebra (2018\'962020)</li>\
+          <li><strong>Grader</strong> \'96 Math 322 (Abstract Algebra) \'b7 Fall 2020</li>\
+          <li><strong>Grader</strong> \'96 Math 313 (Complex Analysis) \'b7 Spring 2023</li>\
+          <li><strong>Grader</strong> \'96 Math 5021 (Graduate Complex Analysis I), Math 415 (PDEs) \'b7 Fall 2024</li>\
+          <li><strong>Grader</strong> \'96 Math 5121 (Graduate Complex Analysis I), Math 5331 (Graduate Algebra I) \'b7 Fall 2025</li>\
+        </ul>\
+      </section>\
+\
+      <section id="publications">\
+        <h2>Publications & Preprints</h2>\
+        <ol class="pub-list">\
+          <li>\
+            <strong>Nicol\'e1s Berkopec</strong>, J. Branch*, R. Heikkinen*, C. Nunn*, and T.A. Wong.<br>\
+            <em>The Density of Elliptic Dedekind Sums.</em><br>\
+            <span class="meta">Acta Arith. 205 (2022), no. 1, 33\'9640. [<a href="https://www.impan.pl/en/publishing-house/journals-and-series/acta-arithmetica/all/205/1/114850/the-density-of-elliptic-dedekind-sums" style="color:var(--accent);">journal</a>] [<a href="https://arxiv.org/pdf/2208.03286" style="color:var(--accent);">arXiv</a>]</span>\
+          </li>\
+          <li>\
+            <strong>Nicol\'e1s Berkopec</strong>, Sarah Poini, and Janet Vassilev.<br>\
+            <em>Properties of Pair Operations Inspired by Order.</em><br>\
+            <span class="meta">Submitted.</span>\
+          </li>\
+        </ol>\
+      </section>\
+\
+      <section id="service">\
+        <h2>Service & Outreach</h2>\
+        <ul>\
+          <li>Initiated expansion of the Directed Reading Program for high-school students in New Mexico (Spring 2022)</li>\
+          <li>Undergraduate representative and co-founder of the UNM Math DRP (Fall 2021)</li>\
+        </ul>\
+      </section>\
+\
+      <section id="contact" class="contact">\
+        <h2>Contact & Links</h2>\
+        <p><strong>Nicol\'e1s Berkopec</strong></p>\
+        <p>PhD Candidate in Mathematics</p>\
+        <p>Washington University in St. Louis</p>\
+        <p>Email: <a href="mailto:b.nic@wustl.edu" style="color:var(--accent);">b.nic@wustl.edu</a></p>\
+        <p>Profiles: <a href="#" target="_blank" style="color:var(--accent);">Google Scholar</a> \'b7 <a href="#" target="_blank" style="color:var(--accent);">GitHub</a> \'b7 <a href="#" target="_blank" style="color:var(--accent);">ORCID</a></p>\
+        <p style="margin-top:12px"><a class="btn" href="cv.pdf" download>Download CV (PDF)</a></p>\
+      </section>\
+    </main>\
+\
+    <footer>\
+      <small>&copy; <span id="year"></span> Nicol\'e1s Berkopec. All rights reserved.</small>\
+    </footer>\
+  </div>\
+\
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>\
+</body>\
+</html>}
