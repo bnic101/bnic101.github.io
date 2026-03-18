@@ -6,236 +6,312 @@
   <title>Nicolás Berkopec — Mathematics PhD</title>
   <meta name="description" content="Homepage of Nicolás Berkopec — PhD student in Mathematics at Washington University in St. Louis." />
 
-  <!-- Inter font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
-  <!-- MathJax for LaTeX rendering (optional) -->
   <script>
     window.MathJax = {
-      tex: {inlineMath: [['\\(','\\)'], ['$', '$']], displayMath: [['\\[','\\]'], ['$$','$$']]},
-      options: {skipHtmlTags: ['script','noscript','style','textarea','pre']}
+      tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
-  
-  <style>
-  a {
-    color: #00bfff;           /* default */
-  }
-  a:visited {
-    color: #9370db;           /* after clicking */
-  }
-  a:hover {
-    color: #ffffff;           /* when hovering */
-  }
-  </style>
 
   <style>
-    :root{
-      --bg: #1f2937;       /* slate gray */
-      --text: #f8f8f8;     /* soft white */
-      --muted: #cbd5e1;    /* muted light */
-      --accent: #800020;   /* burgundy */
-      --card: #2a3444;     /* card background */
-      --radius: 12px;
-      --maxwidth: 960px;
+    :root {
+      --bg:        #060a06;
+      --green:     #1f9e1f;
+      --green-dim: #165016;
+      --green-hi:  #3dba3d;
+      --cyan:      #00b8cc;
+      --maxwidth:  900px;
     }
-    *{box-sizing:border-box; margin:0; padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background:var(--bg); color:var(--text); line-height:1.65;
-      display:flex; justify-content:center; padding:0 20px;
-    }
-    .site{width:100%; max-width:var(--maxwidth);}
 
-    /* Sticky header */
-    header{
-      position:sticky; top:0; z-index:1000;
-      background:var(--bg); padding:18px 0;
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-      border-bottom:1px solid rgba(255,255,255,0.06);
-    }
-    .brand{display:flex; align-items:center; gap:14px}
-    .avatar{
-      width:56px; height:56px; border-radius:var(--radius);
-      background:linear-gradient(135deg,var(--accent),#a52a2a);
-      display:flex; align-items:center; justify-content:center; font-weight:700; font-size:20px;
-      color:white; box-shadow:0 6px 18px rgba(128,0,32,0.25);
-    }
-    h1{font-size:1.7rem; color:var(--text); margin-bottom:2px}
-    p.lead{color:var(--muted); font-size:.95rem; margin:0}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-    nav{display:flex; align-items:center; gap:8px}
-    nav a{
-      color:var(--muted); text-decoration:none; font-weight:600; font-size:.95rem; padding:8px 10px; border-radius:8px;
+    body {
+      font-family: 'Share Tech Mono', 'Courier New', monospace;
+      background: var(--bg);
+      color: var(--green);
+      line-height: 1.7;
+      display: flex;
+      justify-content: center;
+      padding: 0 20px;
     }
-    nav a:hover{color:var(--accent); background:rgba(128,0,32,0.05)}
 
-    /* Main content */
-    main{margin-top:16px; padding-bottom:48px}
-    section{
-      background:var(--card); padding:20px 22px; border-radius:var(--radius);
-      box-shadow:0 6px 18px rgba(0,0,0,0.25); margin-bottom:20px;
+    /* CRT scanlines */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px, transparent 2px,
+        rgba(0,0,0,0.15) 2px, rgba(0,0,0,0.15) 4px
+      );
+      pointer-events: none;
+      z-index: 9000;
     }
-    h2{
-      font-size:1.2rem; color:var(--accent); margin-bottom:8px;
-      border-bottom:2px solid rgba(128,0,32,0.28); padding-bottom:6px; font-weight:600;
+
+    /* CRT vignette */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(0,0,0,0.6) 100%);
+      pointer-events: none;
+      z-index: 9001;
     }
-    ul, ol{padding-left:1.2rem; margin-top:6px}
-    li + li{margin-top:6px}
-    .meta{color:var(--muted); font-size:.92rem}
-    .pub-list li{padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.06)}
 
-    /* Contact / button */
-    .contact p{margin:.35rem 0}
-    .btn{
-      display:inline-block; padding:.55rem .9rem; border-radius:8px; text-decoration:none;
-      background:var(--accent); color:white; font-weight:600;
+    .site { width: 100%; max-width: var(--maxwidth); }
+
+    /* ── Header ── */
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--bg);
+      padding: 14px 0 12px;
+      border-bottom: 1px solid var(--green-dim);
+      margin-bottom: 8px;
     }
-    .btn:hover{background:#a12c34}
 
-    footer{margin-top:18px; color:var(--muted); font-size:.9rem; text-align:center; padding-bottom:24px}
+    h1 {
+      font-family: 'VT323', monospace;
+      font-size: 2.4rem;
+      color: var(--green-hi);
+      letter-spacing: 2px;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
 
-    /* Responsive */
-    @media (max-width:720px){
-      header{flex-direction:column; align-items:stretch; gap:12px}
-      .brand{justify-content:center; width:100%}
-      nav{justify-content:center; flex-wrap:wrap}
-      .site{padding-top:6px}
+    .cursor {
+      display: inline-block;
+      width: 12px; height: 0.85em;
+      background: var(--green-hi);
+      margin-left: 4px;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    p.lead {
+      font-size: 0.8rem;
+      color: var(--green-dim);
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    nav { display: flex; flex-wrap: wrap; gap: 0; }
+
+    nav a {
+      font-size: 0.78rem;
+      color: var(--green-dim);
+      text-decoration: none;
+      padding: 2px 10px 2px 0;
+      letter-spacing: 0.5px;
+      transition: color 0.1s;
+    }
+    nav a:hover { color: var(--green-hi); }
+
+    /* ── Main ── */
+    main { padding-bottom: 60px; }
+
+    section {
+      padding: 22px 0 6px;
+      scroll-margin-top: 120px;
+    }
+
+    h2 {
+      font-family: 'VT323', monospace;
+      font-size: 1.45rem;
+      color: var(--green-hi);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--green-dim);
+    }
+
+    p { font-size: 0.88rem; }
+
+    a         { color: var(--cyan); text-decoration: none; }
+    a:visited { color: #009aaa; }
+    a:hover   { color: var(--green-hi); }
+
+    /* ── Lists ── */
+    ul {
+      list-style: disc;
+      padding-left: 1.6rem;
+      margin-top: 4px;
+    }
+    ul li { padding: 3px 0; font-size: 0.88rem; }
+
+    ol {
+      list-style: decimal;
+      padding-left: 1.6rem;
+      margin-top: 4px;
+    }
+    ol li { padding: 10px 0; font-size: 0.88rem; }
+    ol li + li { border-top: 1px solid rgba(31,158,31,0.12); }
+
+    .meta {
+      display: block;
+      color: var(--green-dim);
+      font-size: 0.82rem;
+      padding-left: 1rem;
+      margin-top: 3px;
+    }
+
+    /* ── Contact ── */
+    .contact p { margin: 4px 0; font-size: 0.88rem; }
+
+    .btn {
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid var(--green-dim);
+      color: var(--green);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      margin-top: 14px;
+      transition: border-color 0.1s, color 0.1s;
+    }
+    .btn:hover {
+      border-color: var(--green-hi);
+      color: var(--green-hi);
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--green-dim);
+      padding: 12px 0 28px;
+      color: var(--green-dim);
+      font-size: 0.78rem;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      header { position: static; }
+      h1 { font-size: 1.9rem; }
     }
   </style>
 </head>
 <body>
-  <div class="site">
-    <header>
-      <div class="brand">
-        <div class="avatar">NB</div>
-        <div>
-          <h1>Nicolás Berkopec</h1>
-          <p class="lead">PhD Student in Mathematics · Washington University in St. Louis</p>
-        </div>
-      </div>
+<div class="site">
 
-      <nav aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#research">Talks</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#grading">Grading</a>
-        <a href="#publications">Publications</a>
-        <a href="#service">Service</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+  <header>
+    <h1>Nicolás Berkopec<span class="cursor"></span></h1>
+    <p class="lead">PhD Student in Mathematics · Washington University in St. Louis</p>
+    <nav aria-label="Main navigation">
+      <a href="#about">about</a>
+      <a href="#education">education</a>
+      <a href="#research">talks</a>
+      <a href="#teaching">teaching</a>
+      <a href="#grading">grading</a>
+      <a href="#publications">publications</a>
+      <a href="#service">service</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
 
-    <main>
-      <section id="about" aria-labelledby="about-heading">
-        <h2 id="about-heading">About</h2>
-        <p>I am a PhD student in Mathematics at Washington University in St. Louis advised by <a href="https://johnmccarthymath.com">John McCarthy</a> My research interests have an operator theoretic and complex analytic bent with recent attention to hyperbolic analytic curves and cofinite subalgebras associated with Riemann surfaces.</p>
-      </section>
+  <main>
 
-      <section id="education" aria-labelledby="education-heading">
-        <h2 id="education-heading">Education</h2>
-        <ul>
-          <li><strong>PhD in Mathematics</strong> — Washington University in St. Louis, Fall 2023 – present</li>
-          <li><strong>Master’s in Mathematics</strong> — Washington University in St. Louis, Spring 2025</li>
-          <li><strong>B.S. in Mathematics</strong> (Philosophy minor) — University of New Mexico, Spring 2023</li>
-        </ul>
-      </section>
+    <section id="about">
+      <h2>About</h2>
+      <p>I am a PhD student in Mathematics at Washington University in St. Louis advised by <a href="https://johnmccarthymath.com">John McCarthy</a>. My research interests have an operator theoretic and complex analytic bent with recent attention to hyperbolic analytic curves and cofinite subalgebras associated with Riemann surfaces.</p>
+    </section>
 
-      <section id="research" aria-labelledby="research-heading">
-        <h2 id="research-heading">Presentations & Seminar Talks</h2>
-        <ul>
-          <li>WUSTL Analysis Seminar – <em>Hyperbolic Analytic and Algebraic Curves</em>, Sept 2025</li>
-          <li>WUSTL Szegö Seminar – <em>Dirichlet’s Theorem: A Gem from Number Theory</em>, Apr 2024</li>
-          <li>UNM Algebra–Geometry Seminar – <em>p-Derivations, Jet Operators, Ring Schemes</em>, May 2022</li>
-          <li>Young Mathematicians Conference – <em>Elliptic Dedekind Sums</em>, Aug 2021</li>
-          <li>UNM Algebra–Geometry Seminar – <em>Elliptic Dedekind Sums</em>, Aug 2021</li>
-          <li>MAA MathFest – <em>Elliptic Dedekind Sums</em>, Aug 2021</li>
-          <li>SUMMR Conference – <em>Elliptic Dedekind Sums</em>, Jul 2021</li>
-        </ul>
-      </section>
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>PhD in Mathematics</strong> — Washington University in St. Louis, Fall 2023 – present</li>
+        <li><strong>Master's in Mathematics</strong> — Washington University in St. Louis, Spring 2025</li>
+        <li><strong>B.S. in Mathematics</strong> (Philosophy minor) — University of New Mexico, Spring 2023</li>
+      </ul>
+    </section>
 
-      <section id="teaching" aria-labelledby="teaching-heading">
-        <h2 id="teaching-heading">Teaching</h2>
-        <ul>
-          <li><strong>DRP Instructor</strong> – Elementary Mathematics · Fall 2021</li>
-          <li><strong>High-School DRP Instructor</strong> – Group Theory (using own notes) · Spring 2022</li>
-          <li><strong>DRP Instructor</strong> – Naïve Lie Theory (Stillwell, entire book) · Spring 2022</li>
-          <li><strong>DRP Instructor</strong> – Real Analysis (Stein & Shakarchi Ch. 1–2) and Intro to Integration (Bartle Ch. 1–6) · Summer 2022</li>
-          <li><strong>Solution Writer</strong> – Math 312 (Differential Equations & Dynamical Systems) · Spring 2025</li>
-        </ul>
-      </section>
+    <section id="research">
+      <h2>Presentations &amp; Seminar Talks</h2>
+      <ul>
+        <li>WUSTL Analysis Seminar – <em>Hyperbolic Analytic and Algebraic Curves</em>, Sept 2025</li>
+        <li>WUSTL Szegö Seminar – <em>Dirichlet's Theorem: A Gem from Number Theory</em>, Apr 2024</li>
+        <li>UNM Algebra–Geometry Seminar – <em>p-Derivations, Jet Operators, Ring Schemes</em>, May 2022</li>
+        <li>Young Mathematicians Conference – <em>Elliptic Dedekind Sums</em>, Aug 2021</li>
+        <li>UNM Algebra–Geometry Seminar – <em>Elliptic Dedekind Sums</em>, Aug 2021</li>
+        <li>MAA MathFest – <em>Elliptic Dedekind Sums</em>, Aug 2021</li>
+        <li>SUMMR Conference – <em>Elliptic Dedekind Sums</em>, Jul 2021</li>
+      </ul>
+    </section>
 
-      <section id="grading" aria-labelledby="grading-heading">
-        <h2 id="grading-heading">Grading & Tutoring</h2>
-        <ul>
-          <li><strong>Tutor</strong> – Linear Algebra, Calculus I–III, High-School Algebra (2018–2020)</li>
-          <li><strong>Grader</strong> – Math 322 (Abstract Algebra) · Fall 2020</li>
-          <li><strong>Grader</strong> – Math 313 (Complex Analysis) · Spring 2023</li>
-          <li><strong>Grader</strong> – Math 5021 (Graduate Complex Analysis I), Math 415 (PDEs) · Fall 2024</li>
-          <li><strong>Grader</strong> – Math 5121 (Graduate Complex Analysis I), Math 5331 (Graduate Algebra I) · Fall 2025</li>
-        </ul>
-      </section>
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <ul>
+        <li><strong>DRP Instructor</strong> – Elementary Mathematics · Fall 2021</li>
+        <li><strong>High-School DRP Instructor</strong> – Group Theory (using own notes) · Spring 2022</li>
+        <li><strong>DRP Instructor</strong> – Naïve Lie Theory (Stillwell, entire book) · Spring 2022</li>
+        <li><strong>DRP Instructor</strong> – Real Analysis (Stein &amp; Shakarchi Ch. 1–2) and Intro to Integration (Bartle Ch. 1–6) · Summer 2022</li>
+        <li><strong>Solution Writer</strong> – Math 312 (Differential Equations &amp; Dynamical Systems) · Spring 2025</li>
+      </ul>
+    </section>
 
-      <section id="publications" aria-labelledby="pubs-heading">
-        <h2 id="pubs-heading">Publications & Preprints</h2>
-        <ol class="pub-list">
-          <li>
-            <strong>Nicolás Berkopec</strong>, J. Branch*, R. Heikkinen*, C. Nunn*, and T.A. Wong.<br>
-            <em>The Density of Elliptic Dedekind Sums.</em><br>
-            <span class="meta">Acta Arith. 205 (2022), no. 1, 33–40. [<a href="https://www.impan.pl/en/publishing-house/journals-and-series/acta-arithmetica/all/205/1/114850/the-density-of-elliptic-dedekind-sums" style="color:var(--accent)">journal</a>] [<a href="https://arxiv.org/pdf/2208.03286" style="color:var(--accent)">arXiv</a>]</span>
-          </li>
-          <li>
-            <strong>Nicolás Berkopec</strong>, Sarah Poiani, and Janet Vassilev.<br>
-            <em>Properties of Pair Operations Inspired by Order.</em><br>
-            <span class="meta">Submitted.</span>
-          </li>
-        </ol>
-      </section>
+    <section id="grading">
+      <h2>Grading &amp; Tutoring</h2>
+      <ul>
+        <li><strong>Tutor</strong> – Linear Algebra, Calculus I–III, High-School Algebra (2018–2020)</li>
+        <li><strong>Grader</strong> – Math 322 (Abstract Algebra) · Fall 2020</li>
+        <li><strong>Grader</strong> – Math 313 (Complex Analysis) · Spring 2023</li>
+        <li><strong>Grader</strong> – Math 5021 (Graduate Complex Analysis I), Math 415 (PDEs) · Fall 2024</li>
+        <li><strong>Grader</strong> – Math 5121 (Graduate Complex Analysis I), Math 5331 (Graduate Algebra I) · Fall 2025</li>
+      </ul>
+    </section>
 
-      <section id="service" aria-labelledby="service-heading">
-        <h2 id="service-heading">Service & Outreach</h2>
-        <ul>
-          <li>Initiated expansion of the Directed Reading Program for high-school students in New Mexico (Spring 2022)</li>
-          <li>Undergraduate representative and co-founder of the UNM Math DRP (Fall 2021)</li>
-        </ul>
-      </section>
+    <section id="publications">
+      <h2>Publications &amp; Preprints</h2>
+      <ol>
+        <li>
+          <strong>Nicolás Berkopec</strong>, J. Branch*, R. Heikkinen*, C. Nunn*, and T.A. Wong.<br>
+          <em>The Density of Elliptic Dedekind Sums.</em>
+          <span class="meta">Acta Arith. 205 (2022), no. 1, 33–40. &nbsp;
+            [<a href="https://www.impan.pl/en/publishing-house/journals-and-series/acta-arithmetica/all/205/1/114850/the-density-of-elliptic-dedekind-sums">journal</a>]
+            [<a href="https://arxiv.org/pdf/2208.03286">arXiv</a>]
+          </span>
+        </li>
+        <li>
+          <strong>Nicolás Berkopec</strong>, Sarah Poiani, and Janet Vassilev.<br>
+          <em>Properties of Pair Operations Inspired by Order.</em>
+          <span class="meta">Submitted.</span>
+        </li>
+      </ol>
+    </section>
 
-      <section id="contact" aria-labelledby="contact-heading" class="contact">
-        <h2 id="contact-heading">Contact & Links</h2>
-        <p><strong>Nicolás Berkopec</strong></p>
-        <p>PhD Candidate in Mathematics</p>
-        <p>Washington University in St. Louis</p>
-        <p>Email: <a href="mailto:b.nic@wustl.edu" style="color:var(--accent)">b.nic@wustl.edu</a></p>
-        <p>Profiles: <a href="#" target="_blank" style="color:var(--accent)">Google Scholar</a> · <a href="#" target="_blank" style="color:var(--accent)">GitHub</a> · <a href="#" target="_blank" style="color:var(--accent)">ORCID</a></p>
-        <p style="margin-top:12px"><a class="btn" href="cv.pdf" download>Download CV (PDF)</a></p>
-      </section>
-    </main>
+    <section id="service">
+      <h2>Service &amp; Outreach</h2>
+      <ul>
+        <li>Initiated expansion of the Directed Reading Program for high-school students in New Mexico (Spring 2022)</li>
+        <li>Undergraduate representative and co-founder of the UNM Math DRP (Fall 2021)</li>
+      </ul>
+    </section>
 
-    <footer>
-      <small>&copy; <span id="year"></span> Nicolás Berkopec. All rights reserved.</small>
-    </footer>
-  </div>
+    <section id="contact" class="contact">
+      <h2>Contact &amp; Links</h2>
+      <p><strong>Nicolás Berkopec</strong></p>
+      <p>PhD Candidate in Mathematics</p>
+      <p>Washington University in St. Louis</p>
+      <p>Email: <a href="mailto:b.nic@wustl.edu">b.nic@wustl.edu</a></p>
+      <p>Profiles:
+        <a href="#" target="_blank">Google Scholar</a> ·
+        <a href="#" target="_blank">GitHub</a> ·
+        <a href="#" target="_blank">ORCID</a>
+      </p>
+      <a class="btn" href="cv.pdf" download>Download CV</a>
+    </section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    /* If you want to adjust offset for sticky header when jumping, you can add a small scroll adjustment:
-       Uncomment below if you find anchors land hidden under the header.
-    */
-    /*
-    (function(){
-      const header = document.querySelector('header');
-      function offsetAnchor() {
-        if(location.hash.length > 1) {
-          window.scrollTo(window.scrollX, window.scrollY - header.offsetHeight - 8);
-        }
-      }
-      window.addEventListener("hashchange", offsetAnchor);
-      window.setTimeout(offsetAnchor, 10);
-    })();
-    */
-  </script>
+  </main>
+
+  <footer>
+    <small>&copy; <span id="year"></span> Nicolás Berkopec · All rights reserved</small>
+  </footer>
+
+</div>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
