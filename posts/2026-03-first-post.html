@@ -1,1 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My first post — Nicolás Berkopec</title>
 
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']] },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+  <style>
+    :root { --bg: #ffffff; --text: #000000; }
+    html.invert { --bg: #000000; --text: #ffffff; }
+
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 { font-size: 1.7rem; margin: 0 0 4px; }
+    p  { margin: 12px 0; }
+    a  { color: var(--text); }
+
+    .date { font-style: italic; margin-bottom: 20px; }
+    .nav  { font-size: 0.9rem; margin-bottom: 12px; }
+
+    button {
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--text);
+      padding: 2px 8px;
+      cursor: pointer;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .topbar h1 { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <h1>My first post</h1>
+    <button id="themeToggle" type="button">Dark</button>
+  </div>
+
+  <p class="date">March 2026</p>
+  <p class="nav"><a href="../blog.html">&larr; Blog</a> &nbsp; <a href="../index.html">&larr; Home</a></p>
+
+  <p>Write your post here. Each paragraph goes inside its own &lt;p&gt; ... &lt;/p&gt; tags.</p>
+
+  <p>You can use math just like on your homepage, for example \( e^{i\pi} + 1 = 0 \).</p>
+
+<script>
+  var toggle = document.getElementById('themeToggle');
+  toggle.addEventListener('click', function () {
+    var dark = document.documentElement.classList.toggle('invert');
+    toggle.textContent = dark ? 'Light' : 'Dark';
+  });
+</script>
+</body>
+</html>
