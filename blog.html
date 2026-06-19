@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog — Nicolás Berkopec</title>
+
+  <style>
+    :root { --bg: #ffffff; --text: #000000; }
+    html.invert { --bg: #000000; --text: #ffffff; }
+
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 { font-size: 1.7rem; margin: 0 0 4px; }
+    h2 { font-size: 1.2rem; margin: 24px 0 6px; }
+    p  { margin: 8px 0; }
+    a  { color: var(--text); }
+
+    ul { margin: 6px 0; padding-left: 28px; }
+    li { margin: 8px 0; }
+
+    .date { font-style: italic; }
+    .nav  { font-size: 0.9rem; margin-bottom: 12px; }
+
+    button {
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--text);
+      padding: 2px 8px;
+      cursor: pointer;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .topbar h1 { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <h1>Blog</h1>
+    <button id="themeToggle" type="button">Dark</button>
+  </div>
+
+  <p class="nav"><a href="index.html">&larr; Home</a></p>
+
+  <!-- Add each new post as a new <li> at the TOP of this list. -->
+  <ul>
+    <li>
+      <a href="posts/2026-03-first-post.html">My first post</a><br>
+      <span class="date">March 2026</span>
+    </li>
+  </ul>
+
+<script>
+  var toggle = document.getElementById('themeToggle');
+  toggle.addEventListener('click', function () {
+    var dark = document.documentElement.classList.toggle('invert');
+    toggle.textContent = dark ? 'Light' : 'Dark';
+  });
+</script>
+</body>
+</html>
